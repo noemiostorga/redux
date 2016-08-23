@@ -195,7 +195,7 @@ const todoApp = Redux.combineReducers({
 });
 
 /*
- * Go!
+ ** Go!
  */
 
 const store = Redux.createStore(todoApp);
