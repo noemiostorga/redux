@@ -1,8 +1,9 @@
+
 const getInitialState = {
 	tally: []
 }
 
-export default function(state=getInitialState, action){
+export default Tally = function(state=getInitialState, action){
 	switch (action.type){
 		case 'INCREMENT':
 		return {...state, tally:[...state.tally, ...actions.tally]}

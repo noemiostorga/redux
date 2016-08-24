@@ -1,4 +1,2 @@
-
-export const tallies = (tally){
-	console.log("hey");
-}
+import { createStore } from 'redux';
+import reducers from  'reducers/reducers';
