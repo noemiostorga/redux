@@ -1,14 +1,14 @@
 const getInitialState = {
-	todos: []
+	tally: []
 }
 
 export default function(state=getInitialState, action){
 	switch (action.type){
 		case 'INCREMENT':
-		return {...state, todo:[...state.todos, ...actions.todos]}
+		return {...state, tally:[...state.tally, ...actions.tally]}
 
 		case 'DECREMENT':
-		return {...state, todo:[...state.todos, ...actions.todos]}
+		return {...state, tally:[...state.tally, ...actions.tally]}
 
 		case default:
 		return state;
