@@ -219,13 +219,13 @@
 // noprotect
 
 
-const Counter = (state=0 , action) => {
+const Counter = (state=10 , action) => {
   switch(action.type){
     case "ADD":
       return state + " add ";
 
     case "DELETE":
-      return state + console.log("hey");
+      return (state + 1 ) + console.log("hey");
 
     default:
       return state;
