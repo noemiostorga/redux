@@ -219,30 +219,38 @@
 // noprotect
 
 
+const Counter = (state= 0, action ) => {
 
-const Counter = (state =10 , action ) =>{
   switch(action.type){
-    case "INCREMENT":
-    return state + 1;
+    case "ADD":
+      return state + " add ";
 
-    case "DECREMENT":
-    return state - 1;
+    case "DELETE":
+      return state + console.log("delete");
 
     default:
-    return state; 
+      return state;
   }
 }
 
 const { createStore } = Redux;
 const store = createStore(Counter);
 
-const render = () => {
+const render = () => { 
   document.body.innerText = store.getState();
 }
 
 store.subscribe(render);
 render();
 
-document.addEventListener('click', () => {
-  store.dispatch({type: "DECREMENT"});
-});
+document.addEventListener("click", () => {
+  store.dispatch({type: "ADD"})
+})
+
+
+
+
+
+
+
+
