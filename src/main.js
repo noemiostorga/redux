@@ -219,14 +219,13 @@
 // noprotect
 
 
-const Counter = (state= 0, action ) => {
-
+const Counter = (state=0 , action) => {
   switch(action.type){
     case "ADD":
       return state + " add ";
 
     case "DELETE":
-      return state + console.log("delete");
+      return state + console.log("hey");
 
     default:
       return state;
@@ -236,7 +235,7 @@ const Counter = (state= 0, action ) => {
 const { createStore } = Redux;
 const store = createStore(Counter);
 
-const render = () => { 
+const render = () => {
   document.body.innerText = store.getState();
 }
 
@@ -244,9 +243,8 @@ store.subscribe(render);
 render();
 
 document.addEventListener("click", () => {
-  store.dispatch({type: "ADD"})
+  store.dispatch({type: "DELETE"})
 })
-
 
 
 
