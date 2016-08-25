@@ -218,9 +218,9 @@
 // store.subscribe(render);
 // noprotect
 
-const { createStore } = 'redux';
 
-const Counter = (state = 0 , action ){
+
+const Counter = (state =10 , action ) =>{
   switch(action.type){
     case "INCREMENT":
     return state + 1;
@@ -233,13 +233,16 @@ const Counter = (state = 0 , action ){
   }
 }
 
+const { createStore } = Redux;
+const store = createStore(Counter);
+
 const render = () => {
-  document.body.innterText = store.getState();
+  document.body.innerText = store.getState();
 }
 
 store.subscribe(render);
 render();
 
-document.addEventListner('click', () => {
-  store.dispatch({type: "INCREMENT"});
-})
+document.addEventListener('click', () => {
+  store.dispatch({type: "DECREMENT"});
+});
