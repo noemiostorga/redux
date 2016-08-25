@@ -1,31 +1,31 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, browserHistory, hashHistory } from 'react-router';
+// import React from 'react';
+// import { render } from 'react-dom';
+// import { Router, Route, browserHistory, hashHistory } from 'react-router';
 
 
 
 
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
+// // Needed for onTouchTap
+// // http://stackoverflow.com/a/34015469/988941
 
 
-// Layout
-import ExampleLayout from 'layout/example';
+// // Layout
+// import ExampleLayout from 'layout/example';
 
-// UI
-import ExampleComponent from 'ui/example';
+// // UI
+// import ExampleComponent from 'ui/example';
 
-const Site = (
+// const Site = (
 
-    <Router history={hashHistory}>
-      <Route component={ExampleLayout}>
-        <Route path="/" component={ExampleComponent} />
-      </Route>
-    </Router>
+//     <Router history={hashHistory}>
+//       <Route component={ExampleLayout}>
+//         <Route path="/" component={ExampleComponent} />
+//       </Route>
+//     </Router>
 
-);
+// );
 
-render(Site, document.getElementById('app'));
+// render(Site, document.getElementById('app'));
 
 /*
  * We will be explaining the code below
@@ -217,3 +217,29 @@ render(Site, document.getElementById('app'));
 // render();
 // store.subscribe(render);
 // noprotect
+
+const { createStore } = 'redux';
+
+const Counter = (state = 0 , action ){
+  switch(action.type){
+    case "INCREMENT":
+    return state + 1;
+
+    case "DECREMENT":
+    return state - 1;
+
+    default:
+    return state; 
+  }
+}
+
+const render = () => {
+  document.body.innterText = store.getState();
+}
+
+store.subscribe(render);
+render();
+
+document.addEventListner('click', () => {
+  store.dispatch({type: "INCREMENT"});
+})
